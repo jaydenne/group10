@@ -13,9 +13,6 @@ namespace ConsoleApp1
             test123
 
 
-                testing 234
-
-                My name is Brian
 
                 no my name is becca
 

@@ -10,12 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            test123
-
-            hey did you get this version of the code?
-
-
-
+         
         }
     }
 }

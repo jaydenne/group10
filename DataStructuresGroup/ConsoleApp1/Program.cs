@@ -14,9 +14,7 @@ namespace ConsoleApp1
 
 
 
-                no my name is becca
 
-                Jesse is here!
         }
     }
 }

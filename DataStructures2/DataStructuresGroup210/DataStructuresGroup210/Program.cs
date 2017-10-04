@@ -81,6 +81,8 @@ namespace DataStructuresGroup210
                     }
                 }
                 invalidInput = true;
+
+                //This is the format for the submenu 
                 while (invalidInput)
                 {
                     Console.WriteLine("\n1.Add one item to " + menutext +
@@ -91,6 +93,7 @@ namespace DataStructuresGroup210
                         "\n6.Search " + menutext +
                         "\n7.Return to Main Menu\n");
 
+                    //This is used to error check so they can only input a valid int
                     try
                     {
                         input = Convert.ToInt32(Console.ReadLine());
@@ -100,8 +103,12 @@ namespace DataStructuresGroup210
                         input = 0;
                         Console.WriteLine("\nPlease Enter a Valid Menu Option\n");
                     }
+
+                    //These are the cases that match each submenu option
                     switch (input)
                     {
+
+                        //used to add 1 item to data structure
                         case 1:
                             Console.WriteLine("\nPlease Enter a String\n");
                             myString = Console.ReadLine();
@@ -118,7 +125,7 @@ namespace DataStructuresGroup210
                                 myDictionary.Add(myString, 1);
                             }
                             break;
-
+                        //Clear data structure and adds 2000 items
                         case 2:
                             if (menu == 1)
                             {
@@ -145,10 +152,13 @@ namespace DataStructuresGroup210
                                 }
                             }
                             break;
+                        
 
+                        //This displays the contents of the structure
                         case 3:
                             if (menu == 1)
                             {
+                                Console.WriteLine();
                                 foreach (string currentString in myStack)
                                 {
                                     Console.WriteLine(currentString);
@@ -157,6 +167,8 @@ namespace DataStructuresGroup210
                             }
                             else if (menu == 2)
                             {
+                                Console.WriteLine();
+
                                 foreach (string currentString in myQueue)
                                 {
                                     Console.WriteLine(currentString);
@@ -164,6 +176,8 @@ namespace DataStructuresGroup210
                             }
                             else
                             {
+                                Console.WriteLine();
+
                                 foreach (KeyValuePair<string, int> currentEntry in myDictionary)
                                 {
                                     Console.WriteLine(currentEntry.Key + " " + currentEntry.Value);
@@ -171,6 +185,7 @@ namespace DataStructuresGroup210
                             }
                             break;
 
+                        //Deletes a specific item in the structure
                         case 4:
                             Console.WriteLine("\nWhat do you want to delete?\n");
                             myString = Console.ReadLine();
@@ -195,7 +210,7 @@ namespace DataStructuresGroup210
                                     }
 
                                 }
-                                //foreach(string currentValue in tempStack)
+                                
                                 size = tempStack.Count();
                                 for (int j = 0; j < size; j++)
                                 {
@@ -207,7 +222,7 @@ namespace DataStructuresGroup210
                             else if (menu == 2 && myQueue.Contains(myString))
                             {
                                 Queue<string> tempQueue = new Queue<string>();
-                                // foreach (string currentValue in myQueue)
+                                
                                 size = myQueue.Count();
 
                                 for (int j = 0; j < size; j++)
@@ -234,7 +249,8 @@ namespace DataStructuresGroup210
                                 Console.WriteLine("\nThat string does not exist");
                             }
                             break;
-                            
+                         
+                        //Clears the data structure
                         case 5:
                             if (menu == 1)
                             {
@@ -250,10 +266,14 @@ namespace DataStructuresGroup210
                             }
                             break;
 
+
+                        //Searches for specific item in data structure, and returns if it was found
                         case 6:
                             Console.WriteLine("\nWhat do you want search for:\n");
                             myString = Console.ReadLine();
                             bool found = false;
+
+                            //This is the timer, used to measure how long the search took
                             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
                             sw.Restart();
                             if (menu == 1)
@@ -282,8 +302,10 @@ namespace DataStructuresGroup210
 
                             Console.WriteLine("The Search Took " + sw.Elapsed + "\n");
                             break;
-
+                        
+                        //Takes you back to the main menu
                         case 7:
+                            Console.WriteLine();
                             Restart = true;
                             invalidInput = false;
                             break;
@@ -293,6 +315,7 @@ namespace DataStructuresGroup210
                     }
                     Restart = true;
                 }
+
             } while (Restart);
             Console.ReadLine();
         }

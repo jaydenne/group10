@@ -16,7 +16,6 @@ namespace DataStructuresGroup210
             int menu = 0;
             string menutext = " ";
             bool invalidInput = true;
-            int subMenu = 0;
             Stack<string> myStack = new Stack<string>();
             Queue<string> myQueue = new Queue<string>();
             Dictionary<string, int> myDictionary = new Dictionary<string, int>();
@@ -36,7 +35,7 @@ namespace DataStructuresGroup210
                     Console.WriteLine("1. Stack\n" +
                                         "2. Queue\n" +
                                         "3. Dictionary\n" +
-                                        "4. Exit");
+                                        "4. Exit\n");
                     try
                     {
                         input = Convert.ToInt32(Console.ReadLine());
@@ -69,20 +68,20 @@ namespace DataStructuresGroup210
                             Environment.Exit(0);
                             break;
                         default:
-                            Console.WriteLine("Wrong Input Try Again");
+                            Console.WriteLine("\nWrong Input Try Again\n");
                             break;
                     }
                 }
                 invalidInput = true;
                 while (invalidInput)
                 {
-                    Console.WriteLine("1.Add one time to " + menutext +
+                    Console.WriteLine("\n1.Add one item to " + menutext +
                         "\n2.Add Huge List of Items to " + menutext +
                         "\n3.Display " + menutext +
                         "\n4.Delete from " + menutext +
                         "\n5.Clear " + menutext +
                         "\n6.Search " + menutext +
-                        "\n7.Return to Main Menu");
+                        "\n7.Return to Main Menu\n");
 
                     try
                     {
@@ -91,12 +90,12 @@ namespace DataStructuresGroup210
                     catch
                     {
                         input = 0;
-                        Console.WriteLine("Please Enter a Valid Menu Option");
+                        Console.WriteLine("\nPlease Enter a Valid Menu Option\n");
                     }
                     switch (input)
                     {
                         case 1:
-                            Console.WriteLine("Please Enter a String");
+                            Console.WriteLine("\nPlease Enter a String\n");
                             myString = Console.ReadLine();
                             if (menu == 1)
                             {
@@ -110,8 +109,6 @@ namespace DataStructuresGroup210
                             {
                                 myDictionary.Add(myString, 1);
                             }
-                            invalidInput = false;
-
                             break;
 
                         case 2:
@@ -139,7 +136,6 @@ namespace DataStructuresGroup210
                                     myDictionary.Add("New Entry " + (i + 1), (i + 1));
                                 }
                             }
-                            invalidInput = false;
                             break;
 
                         case 3:
@@ -165,11 +161,10 @@ namespace DataStructuresGroup210
                                     Console.WriteLine(currentEntry.Key + " " + currentEntry.Value);
                                 }
                             }
-                            invalidInput = false;
                             break;
 
                         case 4:
-                            Console.WriteLine("What do you want to delete?");
+                            Console.WriteLine("\nWhat do you want to delete?\n");
                             myString = Console.ReadLine();
 
 
@@ -228,14 +223,10 @@ namespace DataStructuresGroup210
                             }
                             else
                             {
-                                Console.WriteLine("That string does not exist");
+                                Console.WriteLine("\nThat string does not exist");
                             }
-
-                            invalidInput = false;
                             break;
-
-
-
+                            
                         case 5:
                             if (menu == 1)
                             {
@@ -249,11 +240,10 @@ namespace DataStructuresGroup210
                             {
                                 myDictionary.Clear();
                             }
-                            invalidInput = false;
                             break;
 
                         case 6:
-                            Console.WriteLine("What do you want search for");
+                            Console.WriteLine("\nWhat do you want search for:\n");
                             myString = Console.ReadLine();
                             bool found = false;
                             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
@@ -275,15 +265,14 @@ namespace DataStructuresGroup210
                             sw.Stop();
                             if (found)
                             {
-                                Console.WriteLine("Your Item Was Found");
+                                Console.WriteLine("\nYour Item Was Found");
                             }
                             else
                             {
-                                Console.WriteLine("Your Item Was Not Found");
+                                Console.WriteLine("\nYour Item Was Not Found");
                             }
 
-                            Console.WriteLine("The Search Took " + sw.Elapsed);
-                            invalidInput = false;
+                            Console.WriteLine("The Search Took " + sw.Elapsed + "\n");
                             break;
 
                         case 7:
@@ -291,7 +280,7 @@ namespace DataStructuresGroup210
                             invalidInput = false;
                             break;
                         default:
-                            Console.WriteLine("Wrong Input Try Again");
+                            Console.WriteLine("\nWrong Input Try Again\n");
                             break;
                     }
                     Restart = true;

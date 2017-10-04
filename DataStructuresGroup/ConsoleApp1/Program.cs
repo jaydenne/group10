@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
+            
             // variable input is for the menu input
             int input = 0;
             int menu = 0;

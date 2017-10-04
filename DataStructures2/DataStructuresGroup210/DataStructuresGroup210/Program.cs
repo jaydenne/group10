@@ -11,21 +11,29 @@ namespace DataStructuresGroup210
         static void Main(string[] args)
         {
 
-            // variable input is for the menu input
+            // variable input used to track user menu item selection
             int input = 0;
+            //menu tracks which menu was selected
             int menu = 0;
+            //menuText is used to set the current menu name selected
             string menutext = " ";
+            //Tracks valid input
             bool invalidInput = true;
+            //creates data stuctures to be used in program
             Stack<string> myStack = new Stack<string>();
             Queue<string> myQueue = new Queue<string>();
             Dictionary<string, int> myDictionary = new Dictionary<string, int>();
+            //string used to handle a string temporarily
             string myString;
+            //tracks whether user should be returned to top menu
             bool Restart = false;
+            //used to hold size of data structure
             int size;
+            //used to hold currentValue of data structure to move it between inputs, structures
             string currentValue;
 
 
-
+            //starts menu, in a do while as it will always show once, menu will be repeated if user does not choose to exit.
             do
             {
                 invalidInput = true;

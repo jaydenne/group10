@@ -10,18 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            test123
-
-
-                testing 234
-
-                My name is Brian
-
-                no my name is becca
-
-                hey everybody
-
-
+         
         }
     }
 }
